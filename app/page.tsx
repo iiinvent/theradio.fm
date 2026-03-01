@@ -11,6 +11,7 @@ import { GamesTab } from "@/components/tabs/games-tab"
 export default function Page() {
   const [activeTab, setActiveTab] = useState<TabId>("home")
 
+
   return (
     <div className="flex min-h-dvh flex-col bg-background">
       {/* Tab content area - scrollable, above the tab bar */}
