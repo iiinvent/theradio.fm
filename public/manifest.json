@@ -1,0 +1,81 @@
+{
+  "short_name": "Music Love",
+  "name": "Music Love",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#0a0a0a",
+  "background_color": "#0a0a0a",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/images/logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/images/logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ],
+  "description": "Welcome to Music Love from theradio.fm, your destination for entertainment and ad-free gaming! Enjoy handpicked playlists, live radio, and ad-free games across all platforms. No logins required, start instantly. With the best South African and Namibian streaming audio, keeping your privacy-first, Music Love is the ultimate hub for music and entertainment.",
+  "dir": "ltr",
+  "lang": "en",
+  "display_override": ["window-controls-overlay"],
+  "categories": [
+    "entertainment",
+    "games",
+    "lifestyle",
+    "music",
+    "social"
+  ],
+  "id": "theradio.fm",
+  "prefer_related_applications": false,
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.google.android.youtube",
+      "id": "com.google.android.youtube"
+    },
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.music",
+      "id": "com.google.android.apps.youtube.music"
+    },
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.spotify.music",
+      "id": "com.spotify.music"
+    },
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.apple.android.music",
+      "id": "com.apple.android.music"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "About",
+      "url": "/",
+      "description": "About Music Love"
+    },
+    {
+      "name": "Privacy",
+      "url": "/privacy",
+      "description": "Privacy Policy"
+    }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "web+music",
+      "url": "/m?%s"
+    }
+  ],
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": ["focus-existing", "auto"]
+  }
+}
