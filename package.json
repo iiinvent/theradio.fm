@@ -1,35 +1,33 @@
 {
   "name": "musiclove",
-  "version": "1.0.0",
-  "description": "Music Love application with Framework7",
-  "main": "index.html",
+  "version": "2.0.0",
+  "description": "Music Love - Your destination for entertainment, live radio, and ad-free gaming",
+  "private": true,
   "scripts": {
-    "start": "http-server . -c-1 -o",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "framework7": "^8.3.0",
-    "framework7-icons": "^5.0.5"
+    "@vercel/analytics": "^1.4.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.468.0",
+    "next": "^15.2.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5"
   },
-  "browserslist": [
-    "Android >= 7",
-    "IOS >= 13",
-    "Safari >= 13",
-    "Chrome >= 52",
-    "Firefox >= 31"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bright-spark/musiclove.git"
-  },
-  "keywords": [
-    "framework7",
-    "music",
-    "app"
-  ],
   "author": "Martin Myburgh",
   "license": "MIT"
 }
