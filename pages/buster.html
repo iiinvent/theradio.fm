@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Suppress Cookie Banners</title>
+    
+    <link rel="stylesheet" href="../node_modules/framework7/framework7-bundle.min.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/thorium.min.css">
+    
+    <!-- Preserve any additional head content -->
+    <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden; /* Prevents scrolling */
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body class="theme-dark color-theme-red">
+    <div class="iframe-container">
+        <iframe id="iframeID" src="https://wimpy.co.za"></iframe>
+    </div>
+    
+    <!-- Preserve any scripts -->
+    <script>
+    document.getElementById('iframeID').onload = function() {
+      let iframe = document.getElementById('iframeID');
+      let iframeWindow = iframe.contentWindow;
+      let iframeDoc = iframeWindow.document;
+
+      // Common selectors for cookie banners
+      let selectors = ['.cookie-banner', '#cookie_bar', '#cookie-consent', '.cookie-consent'];
+
+      // Function to hide elements
+      function hideCookieBanners() {
+        selectors.forEach(selector => {
+          let elements = iframeDoc.querySelectorAll(selector);
+          elements.forEach(el => el.style.display = 'none');
+        });
+      }
+
+      // Initial suppression
+      hideCookieBanners();
+
+      // Observer for dynamic content
+      let observer = new MutationObserver(() => {
+        hideCookieBanners();
+      });
+      observer.observe(iframeDoc.body, { childList: true, subtree: true });
+    };
+  </script>
+</body>
+</html>

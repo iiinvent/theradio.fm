@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Loading Page</title>
+    
+    <link rel="stylesheet" href="../node_modules/framework7/framework7-bundle.min.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/thorium.min.css">
+    
+    <!-- Preserve any additional head content -->
+    <style>
+        body {
+            background-color: #1E1E1E;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .spinner {
+            border: 16px solid #1E1E1E;
+            border-top: 16px solid #BF2D23;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 10px;
+            background: #BF2D23;
+            animation: loading 1s infinite;
+        }
+
+        @keyframes loading {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+    </style>
+</head>
+<body class="theme-dark color-theme-red">
+    <div class="page">
+        <div class="page-content">
+            <div class="spinner"></div>
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+    
+    <!-- Preserve any scripts -->
+    
+</body>
+</html>

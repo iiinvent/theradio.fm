@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Music Love</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0">
+  <meta name="Format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <script type="Module" src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"></script>
+  <script nomodule src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"></script>
+  <meta name="theme-color" content="black">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/framework7-bundle.min.css">
+  <link rel="stylesheet" href="css/thorium.min.css">
+  <link rel="stylesheet" href="css/pages/index.css?r=20309">
+  <link rel="stylesheet" href="css/classes.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body class="theme-dark color-theme-red">
+
+    <div class="hidden-focus-element" tabindex="0"></div>
+
+    <div id="app" class="framework7-root app">
+        <div class="panel-backdrop"></div>     
+        <div id="view-main" class="view view-main view-init safe-areas" data-url="/">
+            <div id="page" class="page" data-name="index">
+                <div class="status--bar"></div>
+                <div class="indicator--bar"></div>
+                <div id="toolbar-o-1010" class="toolbar toolbar-bottom tabbar tabbar-labels">
+                    <div id="o-1011" class="toolbar-inner">
+                        <a id="o-1012" href="#tab-1" class="tab-link">
+                            <i id="o-1013" class="icon f7-icons ios-only">play</i>
+                            <i id="o-1014" class="icon icon-fill f7-icons ios-only">play</i>
+                            <i id="o-1015" class="icon f7-icons md-only">play</i>                                 
+                        </a>
+                        <a id="o-1017" href="#tab-2" class="tab-link">
+                            <i id="o-1018" class="icon f7-icons ios-only">play_rectangle</i>
+                            <i id="o-1019" class="icon icon-fill f7-icons ios-only">play_rectangle</i>
+                            <i id="o-1020" class="icon f7-icons md-only">play_rectangle</i>                                
+                        </a>
+                        <a id="o-1022" href="#tab-3" class="tab-link">
+                            <i id="o-1023" class="icon f7-icons ios-only">rectangle_stack_person_crop</i>
+                            <i id="o-1024" class="icon icon-fill f7-icons ios-only">rectangle_stack_person_crop</i>
+                            <i id="o-1025" class="icon f7-icons md-only">rectangle_stack_person_crop</i>                                 
+                        </a>
+                        <a id="o-1027" href="#tab-4" class="tab-link">
+                            <i id="o-1028" class="icon f7-icons ios-only">rocket</i>
+                            <i id="o-1029"
+                                class="icon icon-fill f7-icons ios-only">rocket</i>
+                            <i id="o-1030" class="icon f7-icons md-only">rocket</i>                                
+                        </a>
+                    </div>
+                </div>
+                
+                <div id="tabs-o-2010" class="tabs">
+
+                    <div id="tab-0" class="page-content tab tab-active">
+                        <div id="div-1040" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="/">
+                            <iframe title="tab-0" id="iframe-1040" src="pages/cover/index.html" loading="eager" class="embed-responsive-item"></iframe>
+                        </div>
+                    </div>
+
+                    <div id="tab-1" class="page-content tab">
+                        <div id="div-1041" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="/">
+                            <iframe title="tab-1" id="iframe-1041" src="pages/radios.html" loading="lazy" class="embed-responsive-item"></iframe>
+                        </div>
+                    </div>
+
+                    <div id="tab-2" class="page-content tab">
+                        <div id="div-1042" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="/">
+                            <iframe title="tab-2" id="iframe-1042" src="pages/yt-select.html" loading="lazy" class="embed-responsive-item"></iframe>
+                        </div>
+                    </div>
+
+                    <div id="tab-3" class="page-content tab">
+                        <div id="div-1043" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="/">
+                            <iframe title="tab-3" id="iframe-1043" src="pages/fluid.html" loading="lazy" class="embed-responsive-item"></iframe>
+                        </div>
+                    </div>
+
+                    <div id="tab-4" class="page-content tab">
+                        <div id="div-1044" class="embedweb embed-responsive w-100 embed-responsive-cover" data-href="/">
+                            <iframe title="tab-4" id="iframe-1044" src="pages/gamesnacks.html" loading="lazy" class="embed-responsive-item"></iframe>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/service-worker-register.js"></script>
+    <script type="text/javascript" src="js/framework/framework7-bundle.min.js"></script>
+    <script type="text/javascript" src="js/thorium.config.js"></script>
+    <script type="text/javascript" src="js/plugins/thorium.core.min.js"></script>
+    <script type="text/javascript" src="js/custom.js" ></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof thoriumCorePlugin !== 'undefined') {
+                thoriumCorePlugin.appLoaded();
+            }
+        });
+    </script>
+
+    <script>
+        // JavaScript to reload tabs on every second consecutive click
+        const tabs = document.querySelectorAll('.tab-link');
+        const clickCounts = {};
+        let lastTab = "";  // Declare lastTab globally to track between clicks
+    
+        tabs.forEach(tab => {
+            const tabId = tab.getAttribute('href');
+            clickCounts[tabId] = 0; // Initialize click count for each tab
+    
+            tab.addEventListener('click', function (e) {
+                e.preventDefault();  // Prevent default link behavior if necessary
+    
+                // Check if the current tab was the last clicked tab
+                if (lastTab === tabId) {
+                    clickCounts[tabId]++;
+                } else {
+                    clickCounts[tabId] = 1; // Reset count if a different tab is clicked
+                }
+    
+                // Set lastTab to the current tab
+                lastTab = tabId;
+    
+                // Reload the tab's iframe on every second click
+                if (clickCounts[tabId] % 2 === 0) {
+                    // Find the iframe inside the tab and reload its src
+                    const iframe = document.querySelector(`${tabId} iframe`);
+                    if (iframe) {
+                        const src = iframe.getAttribute('src');
+                        iframe.setAttribute('src', src); // Reload iframe
+                    }
+                }
+            });
+        });
+    </script>
+
+
+</body>
+</html>
